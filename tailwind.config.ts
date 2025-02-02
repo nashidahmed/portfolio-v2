@@ -11,6 +11,13 @@ export default {
       colors: {
         background: "var(--background)",
         foreground: "var(--foreground)",
+        primaryBg: "#FFF0DD",
+        secondaryBg: "#252525",
+        primaryText: "#515AD4",
+      },
+      fontFamily: {
+        bigShoulders: ['"Big Shoulders Display"', "sans-serif"],
+        switzer: ['"Switzer"', "Arial", "Helvetica", "sans-serif"],
       },
     },
   },
