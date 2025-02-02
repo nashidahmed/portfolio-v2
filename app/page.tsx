@@ -2,6 +2,7 @@
 
 import { Big_Shoulders_Display } from "next/font/google";
 import { motion } from "framer-motion";
+import { ReactFitty } from "react-fitty";
 import NavButton from "./components/NavButton";
 
 const bigShoulders = Big_Shoulders_Display({
@@ -13,10 +14,12 @@ export default function Home() {
   const navLinks = [
     { title: "Work", link: "#work" },
     { title: "About", link: "#about" },
-    { title: "Contact", link: "#contact" },
+    { title: "Contact", link: "./contact" },
     { title: "Journal", link: "#journal" },
     { title: "Resume", link: "#resume" },
   ];
+
+  const name = "NASHID SHAH";
 
   const tagLines = [
     "Full Stack Dev",
@@ -29,29 +32,31 @@ export default function Home() {
   return (
     <header className="w-full h-screen flex flex-col bg-secondaryBg">
       {/* Navigation Bar */}
-      <nav
-        className={`${bigShoulders.className} flex justify-between pt-16 px-20 uppercase text-6xl font-semibold text-primaryBg`}
-      >
-        {navLinks.map(({ title, link }, index) => (
-          <NavButton key={index} title={title} link={link}></NavButton>
-        ))}
-      </nav>
+      <div className="pt-16 px-20">
+        <ReactFitty className="w-full">
+          <nav
+            className={`${bigShoulders.className} flex justify-between uppercase font-semibold text-primaryBg`}
+          >
+            {navLinks.map(({ title, link }, index) => (
+              <NavButton key={index} title={title} link={link} />
+            ))}
+          </nav>
+        </ReactFitty>
+      </div>
 
       {/* Name Banner */}
-      <div className="flex-1 flex items-center justify-center">
-        <h1
-          className={`${bigShoulders.className} text-6xl md:text-[281px] font-extrabold relative text-center leading-none`}
-        >
+      <div className="flex-1 flex items-center justify-center px-20 font-extrabold">
+        <ReactFitty className={`${bigShoulders.className}`}>
           <span className="relative inline-block">
             <span className="absolute inset-0 text-[#515AD4] -translate-y-12">
-              NASHID SHAH
+              {name}
             </span>
             <span className="absolute inset-0 text-[#EF5235] -translate-y-6">
-              NASHID SHAH
+              {name}
             </span>
-            <span className="relative text-primaryBg">NASHID SHAH</span>
+            <span className="relative text-primaryBg">{name}</span>
           </span>
-        </h1>
+        </ReactFitty>
       </div>
 
       {/* Tagline Section (Stays at Bottom) */}
