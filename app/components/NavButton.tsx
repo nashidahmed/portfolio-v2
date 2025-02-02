@@ -18,7 +18,7 @@ export default function NavButton({ title, link }: NavButtonProps) {
     >
       {/* Default State (White Text) */}
       <motion.span
-        className="text-primaryBg text-3xl font-semibold"
+        className="text-primaryBg text-6xl font-semibold flex-1"
         variants={{
           initial: { opacity: 1 },
           hover: { opacity: 0 },
@@ -37,8 +37,8 @@ export default function NavButton({ title, link }: NavButtonProps) {
         }}
         transition={{ duration: 0.3 }}
       >
-        <span className="text-[#EF5235] text-4xl font-extrabold">{title}</span>
-        <span className="text-[#EF5235] text-4xl">↓</span>
+        <span className="text-[#EF5235] text-6xl font-extrabold">{title}</span>
+        <span className="text-[#EF5235] text-6xl">↓</span>
       </motion.div>
     </motion.a>
   );
