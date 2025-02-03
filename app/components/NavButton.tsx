@@ -12,13 +12,13 @@ export default function NavButton({ title, link }: NavButtonProps) {
   return (
     <motion.a
       href={link}
-      className="relative flex flex-col items-center justify-center cursor-pointer"
+      className="relative flex cursor-pointer flex-col items-center justify-center"
       initial="initial"
       whileHover="hover"
     >
       {/* Default State (White Text) */}
       <motion.span
-        className="text-primaryBg text-6xl font-semibold flex-1"
+        className="flex-1 text-6xl font-semibold text-primaryBg"
         variants={{
           initial: { opacity: 1 },
           hover: { opacity: 0 },
@@ -37,8 +37,10 @@ export default function NavButton({ title, link }: NavButtonProps) {
         }}
         transition={{ duration: 0.3 }}
       >
-        <span className="text-[#EF5235] text-6xl font-extrabold">{title}</span>
-        <span className="text-[#EF5235] text-6xl">↓</span>
+        <span className="text-secondaryText text-6xl font-extrabold">
+          {title}
+        </span>
+        <span className="text-secondaryText text-6xl">↓</span>
       </motion.div>
     </motion.a>
   );

@@ -14,6 +14,8 @@ export default {
         primaryBg: "#FFF0DD",
         secondaryBg: "#252525",
         primaryText: "#515AD4",
+        secondaryText: "#EF5235",
+        accent: "#F8D6D0",
       },
       fontFamily: {
         bigShoulders: ['"Big Shoulders Display"', "sans-serif"],
