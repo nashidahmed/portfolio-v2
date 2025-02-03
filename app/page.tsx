@@ -12,11 +12,11 @@ export const bigShoulders = Big_Shoulders_Display({
 
 export default function Home() {
   const navLinks = [
-    { title: "Work", link: "#work" },
-    { title: "About", link: "#about" },
-    { title: "Contact", link: "./contact" },
-    { title: "Journal", link: "#journal" },
-    { title: "Resume", link: "#resume" },
+    { title: "Work", link: "/work" },
+    { title: "About", link: "/about" },
+    { title: "Contact", link: "/contact" },
+    { title: "Journal", link: "/journal" },
+    { title: "Resume", link: "/resume" },
   ];
 
   const name = "NASHID SHAH";
