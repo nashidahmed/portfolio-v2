@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import "./globals.css";
+import PageTransitionEffect from "./PageTransitionEffect";
 
 export const metadata: Metadata = {
   title: "Nashid Shah | Portfolio",
@@ -14,7 +15,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`antialiased`}>{children}</body>
+      <body className="relative overflow-hidden antialiased">
+        <PageTransitionEffect>{children}</PageTransitionEffect>
+      </body>
     </html>
   );
 }

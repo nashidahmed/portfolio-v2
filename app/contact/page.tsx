@@ -1,10 +1,12 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { motion } from "motion/react";
 import { bigShoulders } from "../page";
 import ArrowUpIcon from "../components/icons/ArrowUpIcon";
 import Link from "next/link";
 import Input from "../components/Input";
+import Textarea from "../components/Textarea";
+import Button from "../components/Button";
 
 export default function Contact() {
   const socialMedia = [
@@ -19,24 +21,26 @@ export default function Contact() {
   ];
 
   return (
-    <div className="flex flex-col gap-4 p-14">
+    <div className="flex h-screen w-full flex-col gap-4 bg-background p-14">
       <header className="flex flex-col gap-6">
         <section
           className={`${bigShoulders.className} flex gap-4 text-9xl font-extrabold uppercase`}
         >
-          <motion.div
-            className="flex items-center justify-center rounded-full"
-            initial={{ color: "#EF5235", height: 32, width: 32 }}
-            whileHover={{
-              backgroundColor: "#EF5235",
-              color: "#FFF0DD",
-              height: 49,
-              width: 49,
-            }}
-            transition={{ duration: 0.3, ease: "easeOut" }}
-          >
-            <ArrowUpIcon className="cursor-pointer" />
-          </motion.div>
+          <Link href={"/"}>
+            <motion.div
+              className="flex items-center justify-center rounded-full"
+              initial={{ color: "#EF5235", height: 32, width: 32 }}
+              whileHover={{
+                backgroundColor: "#EF5235",
+                color: "#FFF0DD",
+                height: 49,
+                width: 49,
+              }}
+              transition={{ duration: 0.3, ease: "easeOut" }}
+            >
+              <ArrowUpIcon className="cursor-pointer" />
+            </motion.div>
+          </Link>
           Let&apos;s talk
         </section>
         <section>
@@ -60,9 +64,15 @@ export default function Contact() {
           If not, feel free to shoot me a message down below!
         </section>
       </header>
-      <section className="flex flex-col gap-4">
-        <Input label="Name" />
-        <Input label="Email address" />
+      <section className="flex flex-1 flex-col gap-4">
+        <Input label="Name" id="name" />
+        <Input label="Email address" id="email" />
+        <div className="flex-1">
+          <Textarea label="Write a message" id="message" />
+        </div>
+        <div className="text-left">
+          <Button>Send Message</Button>
+        </div>
       </section>
     </div>
   );

@@ -1,13 +1,13 @@
 "use client";
 
 import { Big_Shoulders_Display } from "next/font/google";
-import { motion } from "framer-motion";
+import { motion } from "motion/react";
 import { ReactFitty } from "react-fitty";
 import NavButton from "./components/NavButton";
 
 export const bigShoulders = Big_Shoulders_Display({
   subsets: ["latin"],
-  weight: ["400", "700", "800"],
+  weight: ["400", "600", "700", "800"],
 });
 
 export default function Home() {
@@ -46,15 +46,15 @@ export default function Home() {
 
       {/* Name Banner */}
       <div className="flex flex-1 items-center justify-center px-20 font-extrabold">
-        <ReactFitty className={`${bigShoulders.className}`}>
+        <ReactFitty className={bigShoulders.className}>
           <span className="relative inline-block">
-            <span className="absolute inset-0 -translate-y-12 text-[#515AD4]">
+            <span className="relative text-[#515AD4]">{name}</span>
+            <span className="absolute inset-0 translate-y-6 text-secondaryText">
               {name}
             </span>
-            <span className="text-secondaryText absolute inset-0 -translate-y-6">
+            <span className="absolute inset-0 translate-y-12 text-primaryBg">
               {name}
             </span>
-            <span className="relative text-primaryBg">{name}</span>
           </span>
         </ReactFitty>
       </div>
